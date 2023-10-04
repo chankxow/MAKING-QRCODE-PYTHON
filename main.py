@@ -1,4 +1,4 @@
-import qrcode # install with pip install qrcode
+import qrcode # install with terminal --> pip install qrcode
 
 qr = qrcode.QRCode(
   version=1,
