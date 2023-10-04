@@ -1,12 +1,15 @@
-import qrcode
+import qrcode # install with pip install qrcode
 
 qr = qrcode.QRCode(
   version=1,
-  error_correction=qrcode.constants.ERROR_CORRECT_L,
+  error_correction = qrcode.constants.ERROR_CORRECT_L,
   box_size=10,
   border=4,
 )
-qr.add_data("https://github.com/chankxow")
+
+link = str(input("ใส่ลิ้งที่ต้องการแปลงเป็น QRCODE : "))
+NameQrcode = str(input("ชื่อไฟลที่ต้องการแปลง QRCODE (JPG) : "))
+qr.add_data(link)
 
 img = qr.make_image(fill_color="black", back_color="white")
-img.save("qrcode.jpg")
+img.save(f"{NameQrcode}.jpg")
